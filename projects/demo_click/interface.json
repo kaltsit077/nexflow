@@ -1,0 +1,42 @@
+{
+  "interface_version": 2,
+  "name": "GameRunnerDemo",
+  "label": "Game Runner Demo",
+  "version": "0.1.0",
+  "description": "Minimal PI v2 project (official MaaFramework layout). Replace resource/pipeline with your game logic. Docs: https://github.com/MaaXYZ/MaaFramework",
+  "github": "https://github.com/MaaXYZ/MaaFramework",
+  "controller": [
+    {
+      "name": "Win32",
+      "label": "Win32",
+      "type": "Win32",
+      "win32": {
+        "class_regex": ".*",
+        "window_regex": ".*",
+        "screencap": "PrintWindow",
+        "mouse": "PostMessageWithCursorPos",
+        "keyboard": "PostMessageWithCursorPos"
+      }
+    },
+    {
+      "name": "ADB",
+      "label": "ADB",
+      "type": "Adb"
+    }
+  ],
+  "resource": [
+    {
+      "name": "Default",
+      "label": "Default",
+      "path": ["./resource"]
+    }
+  ],
+  "task": [
+    {
+      "name": "DemoClick",
+      "label": "Demo OCR Click",
+      "entry": "Click_Button",
+      "description": "Sample entry from official MaaFramework sample pipeline. Not a real game daily."
+    }
+  ]
+}

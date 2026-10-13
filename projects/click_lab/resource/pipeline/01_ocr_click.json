@@ -1,0 +1,24 @@
+{
+  "OcrClickConfirm": {
+    "desc": "在 ROI 内 OCR 找「确认」，找到就 Click（点识别框中心）",
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": "确认",
+        "threshold": 0.5,
+        "roi": [0, 0, 0, 0]
+      }
+    },
+    "action": {
+      "type": "Click"
+    },
+    "post_delay": 500,
+    "next": ["OcrDone"]
+  },
+  "OcrDone": {
+    "desc": "结束节点（无识别也可结束）",
+    "action": {
+      "type": "DoNothing"
+    }
+  }
+}

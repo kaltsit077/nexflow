@@ -1,0 +1,24 @@
+{
+  "when": "2026-10-11T10:48:58",
+  "entry": "RecStart",
+  "file": "recorded_20261011_104858.json",
+  "steps": [
+    {
+      "kind": "click_template",
+      "name": "RecClick1",
+      "x": 198,
+      "y": 642,
+      "delay_ms": 500,
+      "or_with_prev": false,
+      "template": "rec_104811_01.png",
+      "threshold": 0.7,
+      "desc": "录制点击 (198,642)",
+      "roi": [
+        126,
+        570,
+        144,
+        144
+      ]
+    }
+  ]
+}

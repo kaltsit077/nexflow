@@ -1,0 +1,2 @@
+Put template PNGs here, e.g. my_button.png
+Crop from a 720p-short-side screenshot (lossless PNG).

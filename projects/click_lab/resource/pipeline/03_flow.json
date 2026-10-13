@@ -1,0 +1,40 @@
+{
+  "FlowStart": {
+    "desc": "入口：优先点确认；否则跳回去等首页标记",
+    "next": [
+      "FlowClickConfirm",
+      "[JumpBack]FlowWaitHome"
+    ]
+  },
+  "FlowWaitHome": {
+    "desc": "用 OCR 判断是否在「首页」（可改成你的游戏字样）",
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": ["首页", "主界面", "Home"],
+        "threshold": 0.45
+      }
+    },
+    "post_delay": 300,
+    "next": ["FlowClickConfirm", "[JumpBack]FlowWaitHome"]
+  },
+  "FlowClickConfirm": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": "确认",
+        "threshold": 0.5
+      }
+    },
+    "action": {
+      "type": "Click"
+    },
+    "post_delay": 800,
+    "next": ["FlowEnd"]
+  },
+  "FlowEnd": {
+    "action": {
+      "type": "DoNothing"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "scripts": [
+    {
+      "id": "click_lab",
+      "name": "Click lab (MaaFW)",
+      "type": "maafw",
+      "path": "projects/click_lab",
+      "args": ["-d"],
+      "workdir": "",
+      "timeout_sec": 600,
+      "wait_mode": "wait_exit",
+      "tags": ["maafw", "dev", "ocr"],
+      "presets": [
+        {
+          "id": "run",
+          "name": "MaaPiCli -d",
+          "args": ["-d"],
+          "timeout_sec": 600,
+          "wait_mode": "wait_exit"
+        }
+      ]
+    },
+    {
+      "id": "maafw_demo",
+      "name": "MaaFW Demo Project",
+      "type": "maafw",
+      "path": "projects/demo_click",
+      "args": ["-d"],
+      "workdir": "",
+      "timeout_sec": 600,
+      "wait_mode": "wait_exit",
+      "tags": ["maafw", "demo"],
+      "presets": [
+        {
+          "id": "run",
+          "name": "MaaPiCli -d",
+          "args": ["-d"],
+          "timeout_sec": 600,
+          "wait_mode": "wait_exit"
+        }
+      ]
+    },
+    {
+      "id": "hello_demo",
+      "name": "Demo script (Python)",
+      "type": "python",
+      "path": "scripts/hello_demo.py",
+      "args": ["--times", "3"],
+      "workdir": "",
+      "timeout_sec": 30,
+      "wait_mode": "wait_exit",
+      "tags": ["demo"],
+      "presets": [
+        {
+          "id": "run",
+          "name": "Default 3x",
+          "args": ["--times", "3"],
+          "timeout_sec": 30
+        },
+        {
+          "id": "quick",
+          "name": "Quick 1x",
+          "args": ["--times", "1"],
+          "timeout_sec": 15
+        }
+      ]
+    }
+  ],
+  "lists": [
+    {
+      "name": "Demo chain",
+      "mode": "sequential",
+      "max_parallel": 2,
+      "steps": [
+        {
+          "script": "hello_demo",
+          "preset": "quick",
+          "on_fail": "continue",
+          "retry": 0
+        }
+      ]
+    }
+  ]
+}

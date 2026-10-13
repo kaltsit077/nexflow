@@ -1,0 +1,73 @@
+{
+  "interface_version": 2,
+  "name": "ClickLab",
+  "label": "识图点按实验",
+  "version": "0.1.0",
+  "description": "学习 MaaFW：截图 → 模板/OCR 识别 → Click。先对记事本练习，再换成游戏窗口。",
+  "controller": [
+    {
+      "name": "Win32-Notepad",
+      "label": "记事本练习",
+      "type": "Win32",
+      "win32": {
+        "class_regex": ".*",
+        "window_regex": ".*记事本.*|.*Notepad.*",
+        "screencap": "PrintWindow",
+        "mouse": "Seize",
+        "keyboard": "Seize"
+      }
+    },
+    {
+      "name": "Win32-Any",
+      "label": "任意窗口(改 window_regex)",
+      "type": "Win32",
+      "win32": {
+        "class_regex": ".*",
+        "window_regex": ".*",
+        "screencap": "PrintWindow",
+        "mouse": "Seize",
+        "keyboard": "Seize"
+      }
+    },
+    {
+      "name": "ADB",
+      "label": "模拟器 ADB",
+      "type": "Adb"
+    }
+  ],
+  "resource": [
+    {
+      "name": "Default",
+      "label": "默认资源",
+      "path": [
+        "./resource"
+      ]
+    }
+  ],
+  "task": [
+    {
+      "name": "OCR点确认",
+      "label": "OCR 识别文字并点击",
+      "entry": "OcrClickConfirm",
+      "description": "窗口里出现「确认」二字时点击其中心。记事本可先输入：确认"
+    },
+    {
+      "name": "模板点按钮",
+      "label": "模板匹配图片并点击",
+      "entry": "TplClickButton",
+      "description": "需要你自己裁一张按钮图放到 resource/image/my_button.png"
+    },
+    {
+      "name": "组合流程示例",
+      "label": "先找首页再点确认",
+      "entry": "FlowStart",
+      "description": "演示 next / JumpBack 流程链"
+    },
+    {
+      "name": "录制草稿",
+      "label": "录制草稿",
+      "entry": "RecStart",
+      "description": "由工作室录制导出 recorded_20261011_104858.json"
+    }
+  ]
+}

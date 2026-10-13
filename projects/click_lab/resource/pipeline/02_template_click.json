@@ -1,0 +1,23 @@
+{
+  "TplClickButton": {
+    "desc": "模板匹配 my_button.png，命中则点击。请先放入 resource/image/my_button.png",
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "my_button.png",
+        "threshold": 0.7,
+        "roi": [0, 0, 0, 0]
+      }
+    },
+    "action": {
+      "type": "Click"
+    },
+    "post_delay": 500,
+    "next": ["TplDone"]
+  },
+  "TplDone": {
+    "action": {
+      "type": "DoNothing"
+    }
+  }
+}

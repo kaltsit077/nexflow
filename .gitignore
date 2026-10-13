@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+logs/
+history.json
+config.json
+*.log
+.cursor/
+.cache/
+.github_token
+
+# 全部项目：本体体积大，不入库；保留 README
+library/**
+!library/README.txt
+
+# MaaFramework runtime (install via tools\setup_maafw.bat)
+maafw/**
+!maafw/README.txt
+
+# OCR models (restore with tools\setup_ocr.bat)
+**/resource/model/ocr/*.onnx
+**/resource/model/ocr/keys.txt

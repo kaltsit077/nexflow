@@ -1,0 +1,44 @@
+{
+  "RecEnd": {
+    "desc": "录制结束",
+    "action": {
+      "type": "DoNothing"
+    }
+  },
+  "RecClick1": {
+    "desc": "录制点击 (198,642)",
+    "post_delay": 500,
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "rec_104811_01.png",
+        "threshold": 0.7,
+        "roi": [
+          126,
+          570,
+          144,
+          144
+        ]
+      }
+    },
+    "action": {
+      "type": "Click"
+    },
+    "next": [
+      "RecEnd"
+    ]
+  },
+  "RecStart": {
+    "desc": "录制入口",
+    "recognition": {
+      "type": "DirectHit"
+    },
+    "action": {
+      "type": "DoNothing"
+    },
+    "next": [
+      "RecClick1"
+    ],
+    "post_delay": 0
+  }
+}
